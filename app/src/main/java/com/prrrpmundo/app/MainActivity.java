@@ -14,7 +14,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import androidx.annotation.NonNull;
 
 public class MainActivity extends Activity {
     private static final String APP_URL = "https://prrrp-mundo.pe-lu-ca-21.chatgpt.site";
@@ -108,7 +107,7 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] results) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] results) {
         super.onRequestPermissionsResult(requestCode, permissions, results);
         if (requestCode == MEDIA_PERMISSION_REQUEST && webPermissionRequest != null) {
             if (hasMediaPermissions()) webPermissionRequest.grant(webPermissionRequest.getResources());
@@ -128,7 +127,7 @@ public class MainActivity extends Activity {
     }
 
     @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
+    protected void onSaveInstanceState(Bundle outState) {
         webView.saveState(outState);
         super.onSaveInstanceState(outState);
     }
